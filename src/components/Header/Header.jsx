@@ -22,7 +22,7 @@ export default function Header() {
   };
 
   const logInOutButton = (
-    <Link to={token ? "/" : "/sign-up"}>
+    <Link to={token ? "/react-blog/" : "/react-blog/sign-up"}>
       <Button
         className={`${styles.logInOutButton} ${!token ? styles.lightfreen : styles.black}`}
         onClick={token && handleLogOut}
@@ -34,12 +34,12 @@ export default function Header() {
 
   const isNotLoggedContent = (
     <>
-      <Link to='/'>
+      <Link to='/react-blog/'>
         <Title level={4} style={{ marginBlock: 0 }}>
           Realworld blog
         </Title>
       </Link>
-      <Link to='/sign-in'>
+      <Link to='/react-blog/sign-in'>
         <Button type='text'>Sign In</Button>
       </Link>
       {logInOutButton}
@@ -48,12 +48,12 @@ export default function Header() {
 
   const isLoggedContent = (
     <>
-      <Link to='/'>
+      <Link to='/react-blog/'>
         <Title level={4} style={{ marginBlock: 0 }}>
           Realworld blog
         </Title>
       </Link>
-      <Link to='/new-article'>
+      <Link to='/react-blog/new-article'>
         <Button className={styles.lightfreen}>Create article</Button>
       </Link>
       <Author

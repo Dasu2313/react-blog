@@ -36,7 +36,7 @@ export default function ArticleInfo({ article }) {
         gap={10}
         className={styles["title-container"]}
       >
-        <Link to={`/articles/${article.slug}`}>
+        <Link to={`/react-blog/articles/${article.slug}`}>
           <Title
             level={3}
             ellipsis
