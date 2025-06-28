@@ -1,1 +1,1 @@
-https://dasu23.github.io/react-blog
+https://dasu2313.github.io/react-blog/

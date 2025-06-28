@@ -3,7 +3,7 @@
   "private": true,
   "version": "3.1.1",
   "type": "module",
-  "homepage": "https://dasu23.github.io/react-blog",
+  "homepage": "https://dasu2313.github.io/react-blog/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
