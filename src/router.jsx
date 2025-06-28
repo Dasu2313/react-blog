@@ -10,7 +10,7 @@ import CreateArticle from "./components/CreateArticle/CreateArticle";
 import EditArticle from "./components/EditArticle/EditArticle";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
-const ROOT = "/";
+const ROOT = "/react-blog";
 const ARTICLES = "/articles";
 const ARTICLE_SLUG = "/articles/:slug";
 const EDIT_ARTICLE = "/articles/:slug/edit";
