@@ -30,11 +30,12 @@ export const userApi = createApi({
         body,
       }),
       invalidatesTags: ["User"],
-      providesTags: ["User"], // добавлено
+      providesTags: ["User"],
     }),
     getUser: builder.query({
       query: () => "/user",
       providesTags: ["User"],
+      refetchOnMountOrArgChange: false,
     }),
     editProfile: builder.mutation({
       query: (body) => ({
