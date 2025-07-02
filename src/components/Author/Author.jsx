@@ -9,7 +9,7 @@ const { Title } = Typography;
 
 export default function Author({ author, createdAt, toOpen }) {
   const openProfile = (bool, component) => {
-    if (bool) return <Link to="/react-blog/profile">{component}</Link>;
+    if (bool) return <Link to="/profile">{component}</Link>;
     return component;
   };
 

@@ -135,7 +135,7 @@ export default function SignUp() {
         </Form>
         <Text type='secondary' style={{ fontSize: 12 }}>
           Already have an account?{" "}
-          <Link to='/react-blog/sign-in' style={{ fontSize: 12 }}>
+          <Link to='/sign-in' style={{ fontSize: 12 }}>
             Sign In.
           </Link>
         </Text>

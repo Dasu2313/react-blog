@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 
 import App from "./components/App/App";
 import ArticleContent from "./components/ArticleContent/ArticleContent";
@@ -10,16 +10,16 @@ import CreateArticle from "./components/CreateArticle/CreateArticle";
 import EditArticle from "./components/EditArticle/EditArticle";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
-const ROOT = "/react-blog";
-const ARTICLES = "/react-blog/articles";
-const ARTICLE_SLUG = "/react-blog/articles/:slug";
-const EDIT_ARTICLE = "/react-blog/articles/:slug/edit";
-const NEW_ARTICLE = "/react-blog/new-article";
-const SIGN_UP = "/react-blog/sign-up";
-const SIGN_IN = "/react-blog/sign-in";
-const PROFILE = "/react-blog/profile";
+const ROOT = "/";
+const ARTICLES = "/articles";
+const ARTICLE_SLUG = "/articles/:slug";
+const EDIT_ARTICLE = "/articles/:slug/edit";
+const NEW_ARTICLE = "/new-article";
+const SIGN_UP = "/sign-up";
+const SIGN_IN = "/sign-in";
+const PROFILE = "/profile";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: ROOT,
     element: <App />,
