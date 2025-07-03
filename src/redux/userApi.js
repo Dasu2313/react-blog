@@ -35,7 +35,7 @@ export const userApi = createApi({
     getUser: builder.query({
       query: () => "/user",
       providesTags: ["User"],
-      refetchOnMountOrArgChange: false,
+      keepUnusedDataFor: 3600
     }),
     editProfile: builder.mutation({
       query: (body) => ({

@@ -26,9 +26,9 @@ export default function CreateArticle() {
 
     await addArticle(request)
       .unwrap()
-      .then(() => {
+      .then((res) => {
         message.success("Article created!");
-        navigate("/");
+        navigate(`/articles/${res.article.slug}`);
       })
       .catch((e) => {
         message.error(e.data.errors);

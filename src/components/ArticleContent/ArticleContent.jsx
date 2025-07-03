@@ -19,7 +19,7 @@ export default function ArticleContent() {
   const { article } = articleData || {};
   const { author, createdAt } = article || {};
 
-  const { data: userData } = useGetUserQuery();
+  const { data: userData } = useGetUserQuery(null);
   const { user } = userData || {};
   const { username } = user || {};
 

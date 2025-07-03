@@ -37,10 +37,23 @@ export default function SignIn() {
 
         navigate("/");
       })
-      .catch(() => message.error("Email or password is invalid"));
+      .catch(() => {
+        form.setFields([
+          {
+            name: 'email',
+            errors: [
+              'Email or password is invalid'
+            ]
+          },
+          {
+            name: 'password',
+            errors: [
+              'Email or password is invalid'
+            ]
+          },
+        ])
+      });
   };
-
-  if (isLoading) return <div>Loading</div>;
 
   return (
     <ConfigProvider
@@ -67,6 +80,7 @@ export default function SignIn() {
       >
         <Title level={4}>Sign In</Title>
         <Form
+          disabled={isLoading}
           form={form}
           layout="vertical"
           size="large"

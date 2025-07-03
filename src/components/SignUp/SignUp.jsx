@@ -32,17 +32,31 @@ export default function SignUp() {
         dispatch(signIn(...data.user));
       })
       .catch((e) => {
-        if (e.data.errors.username) {
-          message.error(`Username ${username} already exists.`);
+        const { errors } = e.data;
+
+        const fieldsErrors = [];
+        
+        if (errors.username) {
+          fieldsErrors.push({
+            name: 'username',
+            errors: [
+              `Username ${username} ${errors.username}`
+            ],
+          });
         }
 
-        if (e.data.errors.email) {
-          message.error(`Email ${email} already exists.`);
+        if (errors.email) {
+          fieldsErrors.push({
+            name: 'email',
+            errors: [
+              `Email ${email} ${errors.email}`
+            ],
+          });
         }
+
+        form.setFields(fieldsErrors);
       });
   };
-
-  if (isCreating) return <div>Loading</div>;
 
   return (
     <ConfigProvider
@@ -63,7 +77,7 @@ export default function SignUp() {
     >
       <Flex vertical align='center' justify='center' className={styles["sign-up-container"]}>
         <Title level={4}>Create new account</Title>
-        <Form form={form} layout='vertical' size='large' onFinish={handleFinish}>
+        <Form disabled={isCreating} form={form} layout='vertical' size='large' onFinish={handleFinish}>
           <Form.Item
             label='Username'
             name='username'
